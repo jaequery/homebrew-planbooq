@@ -1,9 +1,9 @@
 cask "planbooq" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.1.484"
-  sha256 arm:   "7303d0a77b0eec5331d0c6d19b10ece95db06bad60d13a19fac972c881ea7958",
-         intel: "1d44144d950834e2aab2cbb873b6318de0b0e2044a3498a698299de67916f7dc"
+  version "0.1.485"
+  sha256 arm:   "97d5ef59d8fa4b825eca93beb45ff5dac1e86190fa53d22ee418485c46610b9f",
+         intel: "53f48d35c210338d3d7e3afd99671f3ef46da60d48a9150779edb9aef2affe6f"
 
   url "https://github.com/jaequery/planbooq/releases/download/v#{version}/Planbooq-#{arch}.dmg",
       verified: "github.com/jaequery/planbooq/"
@@ -21,9 +21,10 @@ cask "planbooq" do
   app "Planbooq.app"
 
   # Strip Gatekeeper quarantine + provenance attrs that macOS Sequoia
-  # re-applies even after Homebrew's default unquarantine pass. Without
-  # this, users hit a "damaged / Move to Trash" dialog on first launch
-  # because the app is only ad-hoc signed (no Apple Developer ID yet).
+  # re-applies even after Homebrew's default unquarantine pass.
+  # Without this users hit a "damaged / Move to Trash" dialog on
+  # first launch because the app is only ad-hoc signed (no Apple
+  # Developer ID yet).
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/Planbooq.app"]
