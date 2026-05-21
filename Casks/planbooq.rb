@@ -16,7 +16,18 @@ cask "planbooq" do
     strategy :github_latest
   end
 
+  depends_on macos: :ventura
+
   app "Planbooq.app"
+
+  # Strip Gatekeeper quarantine + provenance attrs that macOS Sequoia
+  # re-applies even after Homebrew's default unquarantine pass. Without
+  # this, users hit a "damaged / Move to Trash" dialog on first launch
+  # because the app is only ad-hoc signed (no Apple Developer ID yet).
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/Planbooq.app"]
+  end
 
   zap trash: [
     "~/Library/Application Support/Planbooq",
