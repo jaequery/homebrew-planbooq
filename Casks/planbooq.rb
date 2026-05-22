@@ -1,9 +1,9 @@
 cask "planbooq" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.1.510"
-  sha256 arm:   "fb78670a61aea0fb10edf469f60060e9ab52bb7f0049b2144b5d397847c825af",
-         intel: "a191264ec13100c2114a7852dd2adb9231c4386ebff8ad25e3af046aad5bda0e"
+  version "0.1.511"
+  sha256 arm:   "a3766330bfbab610c7613ea553d1fc8c44d2db8ecf2b4b1ce79d11e7784b4cf0",
+         intel: "66007f1474eb0c7b417f085e7b050e74cc1498aabcc1f601342c99f28e8f6d26"
 
   url "https://github.com/jaequery/planbooq/releases/download/v#{version}/Planbooq-#{arch}.dmg",
       verified: "github.com/jaequery/planbooq/"
