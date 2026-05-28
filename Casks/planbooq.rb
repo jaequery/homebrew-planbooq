@@ -1,11 +1,11 @@
 cask "planbooq" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.1.596"
-  sha256 arm:   "e4e2eec5259c963d18ec153fe489fdbb9d23e2053a08890d5b6bc775655b8067",
-         intel: "1a2066d2973e2cd50b44bea44d15566fe60c39b924f105a53b4c1f52ef896b86"
+  version "0.1.597"
+  sha256 arm:   "0b3e0f5da1c454ebbedae95307b38a210699e007ab00fb4bbaf47e36d115c9e4",
+         intel: "e90ef8b041c37b14b4675df25ad599d518d88a25462753e7b662362edf6216d5"
 
-  url "https://github.com/jaequery/planbooq/releases/download/v#{version}/Planbooq-#{arch}.dmg",
+  url "https://github.com/jaequery/planbooq/releases/download/v#{version}/Planbooq-#{version}-#{arch}.dmg",
       verified: "github.com/jaequery/planbooq/"
   name "Planbooq"
   desc "Desktop kanban for vibe coding in the age of parallel AI code generation"
